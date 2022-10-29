@@ -33,7 +33,7 @@ Start the server
 ## Tech Used: 
 
 
-## Client: EJS CSS
+## Client: EJS, CSS
 
 
 **EJS:**

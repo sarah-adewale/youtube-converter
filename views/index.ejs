@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Youtube to mp3 converter</title>
+</head>
+<body>
+    <section class="top-container">
+        <form action="/convert-mp3" method="POST" id="form">
+            <h1><i class="fa-brands fa-youtube"></i>Youtube to mp3 converter</h1>
+            <h4>Enter a valid youtube video id: <span class="youtube-id"> v=nh2FQeAMUek</span></h4>
+            <section>
+                <input type="text" name="videoID" placeholder="video ID"><button id="convert-btn">Convert</button>
+            </section>
+        </form>
+    </section>
+    <section class="bottom-container">
+        <% if(typeof success != 'undefined' && success){ %>
+            <section class="success">
+                <p><%= song_title%> <i class="fa-sharp fa-solid fa-circle-check" style="color: green;"></i></p>
+                <a href="<%= song_link %>"><button id="download-btn">DOWNLOAD</button></a>
+            </section>
+        <% }else if(typeof success != 'undefined' && !success) { %>    
+            <section class="errors">
+                <p><%= message %></p>
+            </section>
+        <% } %>
+    </section>
+    <section class="info">
+        <div>
+            <h1 class="info-heading">Youtube to mp3</h1>
+            <p class="info-text">Easily convert any YouTube video to MP3 using our advanced online YouTube converter. 
+                This tool is designed and optimized to be used on any mobile, tablet and computer device. 
+                <br></br> This online converter does not convert videos length 
+                longer than 1 hour (3600 sec). The advantage of this limitation is that our tool is not overloaded. It 
+                takes only 20-30 seconds to convert 5 minutes of video. <br></br> To use this app, copy the youtube video id in the 
+            url just after the ? mark like this - https://www.youtube.com/watch?<span class="youtube-id"> v=nh2FQeAMUek</span></p>
+        </div>
+    </section>
+
+</body>
+<footer class=""> 
+    <section class="footer-icon">
+        <a href=""><i class="fa-brands fa-github" style="font-size: 50px; color: #48B8C6;"></i></a>
+    </section>
+</footer>
+</html>
